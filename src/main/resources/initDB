@@ -1,0 +1,11 @@
+DROP TABLE IF EXISTS datausers;
+DROP SEQUENCE IF EXISTS data_global;
+
+CREATE SEQUENCE data_global START 100000;
+CREATE TABLE datausers(
+  id INTEGER PRIMARY KEY DEFAULT NEXTVAL('data_global'),
+  firstname VARCHAR(45) NOT NULL,
+  lastname VARCHAR(45) NOT NULL,
+  dob DATE DEFAULT NULL,
+  email VARCHAR NOT NULL
+)
